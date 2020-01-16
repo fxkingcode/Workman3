@@ -8,4 +8,22 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    회사 만들기창에서 인원수를 정하는 스피너 아이템 리스트   -->
+    <string-array name="Number_of_people">
+        <item>1 - 20</item>  <!-- 회사 총 인원이 1명에서 20명 -->
+        <item>21 - 50</item> <!-- 회사 총 인원이 21명에서 50명 -->
+        <item>51 - 100</item> <!-- 회사 총 인원이 51명에서 100명 -->
+        <item>101 - 300</item> <!-- 회사 총 인원이 101명에서 300명 -->
+        <item>301 - 500</item> <!-- 회사 총 인원이 301명에서 500명 -->
+        <item>501 ~ </item> <!-- 회사 총 인원이 501명 이상  -->
+    </string-array>
+
+    <!--   근무조에 따라서 알람을 울리게 하는 아이템 리스트  -->
+    <string-array name="Working_hours_alarm">
+        <item>근무 30분 전에 울림</item>
+        <item>근무 1시간 전에 울림</item>
+        <item>근무 1시간 반 전에 울림</item>
+        <item>근무 2시간 전에 울림</item>
+    </string-array>
 </resources>
