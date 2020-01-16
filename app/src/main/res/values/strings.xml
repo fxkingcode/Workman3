@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Workman</string>
+    <string name="home">홈</string>
+    <string name="schedule">근무일정</string>
+    <string name="time">출퇴근</string>
+    <string name="alarm">알람</string>
+    <string name="menu">더보기</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
