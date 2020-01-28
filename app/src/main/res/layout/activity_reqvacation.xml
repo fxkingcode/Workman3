@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReqvacationActivity">
+    tools:context=".View.Request_Vacation.ReqvacationActivity">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="나의 프로필"
+        android:text="휴가신청"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,9 @@
 
     <Button
         style="?android:attr/borderlessButtonStyle"
+        android:id="@+id/RV_apply"
         android:layout_width="55dp"
+        android:enabled="false"
         android:layout_height="55dp"
         android:background="@null"
         android:text="신청"
@@ -65,7 +67,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:mcv_firstDayOfWeek="monday"
                 app:mcv_showOtherDates="defaults"
-                app:mcv_selectionColor="@color/green"/>
+                app:mcv_selectionColor="@color/neoMint"/>
 
             <View
                 android:id="@+id/view2"
@@ -76,7 +78,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/RV_calendarView" />
 
             <TextView
-                android:id="@+id/vacatypetext"
+                android:id="@+id/RV_typetext"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:gravity="start|center"
@@ -87,12 +89,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/view2" />
 
             <Spinner
-                android:layout_width="wrap_content"
+                android:id="@+id/RV_type"
+                android:layout_width="100dp"
                 android:layout_height="0dp"
                 android:entries="@array/vacationtype"
-                app:layout_constraintBottom_toBottomOf="@+id/vacatypetext"
+                app:layout_constraintBottom_toBottomOf="@+id/RV_typetext"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/vacatypetext" />
+                app:layout_constraintTop_toTopOf="@+id/RV_typetext" />
 
             <View
                 android:id="@+id/view3"
@@ -100,10 +103,10 @@
                 android:layout_height="0.5dp"
                 android:background="@color/gray"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/vacatypetext" />
+                app:layout_constraintTop_toBottomOf="@+id/RV_typetext" />
 
             <TextView
-                android:id="@+id/vacastarttext"
+                android:id="@+id/RV_starttext"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:gravity="start|center"
@@ -114,15 +117,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/view3" />
 
             <Button
+                android:id="@+id/RV_startbutton"
                 style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
+                android:enabled="false"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:text="AM 00:00"
                 android:timePickerMode="spinner"
                 android:padding="10dp"
-                app:layout_constraintBottom_toBottomOf="@id/vacastarttext"
+                app:layout_constraintBottom_toBottomOf="@id/RV_starttext"
+                app:layout_constraintStart_toStartOf="@+id/RV_type"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/vacastarttext" />
+                app:layout_constraintTop_toTopOf="@+id/RV_starttext" />
 
             <View
                 android:id="@+id/view4"
@@ -130,10 +136,10 @@
                 android:layout_height="0.5dp"
                 android:background="@color/gray"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/vacastarttext" />
+                app:layout_constraintTop_toBottomOf="@+id/RV_starttext" />
 
             <TextView
-                android:id="@+id/vacaendtext"
+                android:id="@+id/RV_endtext"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:gravity="start|center"
@@ -144,15 +150,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/view4" />
 
             <Button
+                android:id="@+id/RV_endbutton"
                 style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
+                android:enabled="false"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:text="AM 00:00"
                 android:timePickerMode="spinner"
                 android:padding="10dp"
-                app:layout_constraintBottom_toBottomOf="@id/vacaendtext"
+                app:layout_constraintBottom_toBottomOf="@id/RV_endtext"
+                app:layout_constraintStart_toStartOf="@+id/RV_type"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/vacaendtext" />
+                app:layout_constraintTop_toTopOf="@+id/RV_endtext" />
 
             <View
                 android:id="@+id/view5"
@@ -160,11 +169,11 @@
                 android:layout_height="0.5dp"
                 android:background="@color/gray"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/vacaendtext" />
+                app:layout_constraintTop_toBottomOf="@+id/RV_endtext" />
 
             <EditText
                 android:hint="휴가 사유를 입력하십시오."
-                android:id="@+id/vacareason"
+                android:id="@+id/RV_reason"
                 android:gravity="start"
                 android:textSize="15dp"
                 android:paddingHorizontal="10dp"
@@ -174,4 +183,16 @@
                 android:layout_height="130dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:theme="@style/Widget.AppCompat.ProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RV_progressBar"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,6 +26,15 @@
         <activity android:name=".ScheduleGroupSet2" />
         <activity android:name=".ScheduleListSet" />
         <activity android:name=".View.Login.LoginActivity" />
+        <activity android:name=".AddEmployeeActivity"></activity>
+        <activity android:name=".AddGroupActivity" />
+        <activity android:name=".GroupActivity" />
+        <activity android:name=".View.Request_Vacation.ReqvacationActivity" />
+        <activity android:name=".DetailvacaActivity" />
+        <activity android:name=".View.Vacation.VacationActivity" />
+        <activity android:name=".EmployeeActivity" />
+        <activity android:name=".CompanyprofileActivity" />
+        <activity android:name=".MyprofileActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

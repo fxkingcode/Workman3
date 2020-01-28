@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat
 import com.prolificinteractive.materialcalendarview.DayViewDecorator
 
 
-class RangeDayDecorator(context: Context) : DayViewDecorator {
+class RangeDayDecorator(val context: Context) : DayViewDecorator {
 
     private val list = HashSet<CalendarDay>()
 
@@ -24,6 +24,8 @@ class RangeDayDecorator(context: Context) : DayViewDecorator {
     override fun decorate(view: DayViewFacade) {
         return
     }
+
+
 
     /**
      * We're changing the dates, so make sure to call [MaterialCalendarView.invalidateDecorators]

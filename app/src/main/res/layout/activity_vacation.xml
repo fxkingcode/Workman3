@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VacationActivity">
+    tools:context=".View.Vacation.VacationActivity">
 
     <TextView
         android:id="@+id/textView3"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/V_calender"
+        android:id="@+id/V_calendarbutton"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,13 +64,28 @@
         android:layout_marginTop="5dp"
         android:background="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/V_calender" />
+        app:layout_constraintTop_toBottomOf="@id/V_calendarbutton" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/V_recyclerView"
         app:layout_constraintTop_toBottomOf="@id/view"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
         android:layout_height="0dp"/>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:visibility="gone"
+        android:id="@+id/V_calendarView"
+        android:background="@drawable/tedury2"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:mcv_firstDayOfWeek="monday"
+        app:mcv_showOtherDates="defaults"
+        app:mcv_selectionColor="@color/neoMint"/>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,4 +101,15 @@
         android:scaleType="center"
         app:srcCompat="@drawable/ic_add_black_24dp"/>
 
+    <ProgressBar
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:theme="@style/Widget.AppCompat.ProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/V_progressBar"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
