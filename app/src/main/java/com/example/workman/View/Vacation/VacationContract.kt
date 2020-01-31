@@ -2,7 +2,7 @@ package com.example.workman.View.Vacation
 
 import android.content.Context
 import com.example.workman.Adapter.AdapterContract.VacationAdapterContract
-import com.example.workman.Data.VacationItem
+import com.example.workman.Model.DTO.VacationItem
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -11,7 +11,7 @@ interface VacationContract {
         fun callItems(firstDate: Date,lastDate:Date,isclear:Boolean)
         fun cancelAsyncTask()
         var adapterModel:VacationAdapterContract.Model
-        var adapterView:VacationAdapterContract.View
+        var adapterView:VacationAdapterContract.View?
     }
 
     interface IVacationView{
@@ -19,6 +19,7 @@ interface VacationContract {
         fun progressVisible()
         fun progressInvisible()
         fun toastMessage(text:String)
+        fun detailVacation(idx:Int)
     }
 
     interface Listener

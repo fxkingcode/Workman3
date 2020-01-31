@@ -1,8 +1,8 @@
 package com.example.workman.View.Request_Vacation
 
 import android.content.Context
-import com.example.workman.Data.VacationItem
-import com.example.workman.Model.VacationModel
+import com.example.workman.Model.DAO.VacationModel
+import com.example.workman.Model.DTO.VacationItem
 import com.prolificinteractive.materialcalendarview.CalendarDay
 
 class ReqvacationPresenter(
@@ -10,7 +10,8 @@ class ReqvacationPresenter(
     val view: ReqvacationContract.IReqvacationView
 ):ReqvacationContract.IReqvacationPresenter,ReqvacationContract.Listener {
 
-    private var vacationModel: VacationModel = VacationModel()
+    private var vacationModel: VacationModel =
+        VacationModel()
 
     override fun startTimeClick() {
         view.createTimePicker("시작 시간")
@@ -164,9 +165,12 @@ class ReqvacationPresenter(
     }
 
     override fun apply(dates:List<CalendarDay>,type: String,startTime:String?,endTime:String?,reason:String?) {
+        val email:String = "이메일"
+        val name:String = "이름"
         for(i in dates.indices)
         {
-            vacationModel.vacationRequest(dates[i].date,type,startTime,endTime,reason,this)
+            val vacationItem: VacationItem = VacationItem(null,name,type,dates[i].date,false,null,null,startTime,endTime,reason,email)
+            vacationModel.vacationRequest(vacationItem,this)
         }
     }
 }

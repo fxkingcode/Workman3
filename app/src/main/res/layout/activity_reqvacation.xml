@@ -73,7 +73,7 @@
                 android:id="@+id/view2"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gray"
+                android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RV_calendarView" />
 
@@ -101,7 +101,7 @@
                 android:id="@+id/view3"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gray"
+                android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RV_typetext" />
 
@@ -134,7 +134,7 @@
                 android:id="@+id/view4"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gray"
+                android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RV_starttext" />
 
@@ -167,7 +167,7 @@
                 android:id="@+id/view5"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gray"
+                android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RV_endtext" />
 

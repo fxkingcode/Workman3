@@ -1,12 +1,6 @@
 package com.example.workman.View.Request_Vacation
 
-import android.content.Context
-import android.widget.Spinner
-import com.example.workman.Adapter.AdapterContract.VacationAdapterContract
-import com.example.workman.Data.VacationItem
 import com.prolificinteractive.materialcalendarview.CalendarDay
-import java.util.*
-import kotlin.collections.ArrayList
 
 interface ReqvacationContract {
     interface IReqvacationPresenter{

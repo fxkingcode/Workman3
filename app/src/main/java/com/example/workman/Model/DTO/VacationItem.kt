@@ -1,12 +1,15 @@
-package com.example.workman.Data
+package com.example.workman.Model.DTO
 
 import java.util.*
 
 data class VacationItem(
     val idx: Int?,
+    val name:String,
     val type: String,
     val date: Date,
-    val approve: Boolean,
+    val approve: Boolean?,
+    val approveManager:String?,
+    val approveDate:Date?,
     val startTime: String?,
     val endTime: String?,
     val reason: String?,

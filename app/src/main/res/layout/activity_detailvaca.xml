@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailvacaActivity">
+    tools:context=".View.Detail_Vacation.DetailvacaActivity">
 
     <TextView
         app:layout_constraintTop_toTopOf="parent"
@@ -12,8 +12,21 @@
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="나의 프로필"
+        android:text="휴가"
         app:layout_constraintBottom_toBottomOf="@+id/view" android:id="@+id/textView3"/>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:id="@+id/DV_cancel"
+        android:layout_width="55dp"
+        android:enabled="false"
+        android:layout_height="55dp"
+        android:background="@null"
+        android:text="취소"
+        android:textColor="@color/red"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:background="@drawable/ic_chevron_left_black_24dp"
@@ -42,6 +55,7 @@
         android:layout_height="60dp"/>
 
     <TextView
+        android:id="@+id/DV_name"
         android:text="홍길동"
         android:textSize="20dp"
         android:padding="10dp"
@@ -53,7 +67,7 @@
         android:layout_height="0dp"/>
 
     <View
-        android:background="@color/gray"
+        android:background="@color/gray3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vacanametext"
         android:layout_width="match_parent"
@@ -71,6 +85,7 @@
         android:layout_height="60dp"/>
 
     <TextView
+        android:id="@+id/DV_type"
         android:text="연차"
         android:textSize="20dp"
         android:padding="10dp"
@@ -82,7 +97,7 @@
         android:layout_height="0dp"/>
 
     <View
-        android:background="@color/gray"
+        android:background="@color/gray3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vacatypetext"
         android:layout_width="match_parent"
@@ -96,14 +111,14 @@
         android:padding="10dp"
         android:text="휴가 날짜"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@id/vacadate"
+        app:layout_constraintBottom_toBottomOf="@id/DV_date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/vacadate" />
+        app:layout_constraintTop_toTopOf="@+id/DV_date" />
 
     <TextView
         android:minHeight="60dp"
         android:scrollbars="vertical"
-        android:id="@+id/vacadate"
+        android:id="@+id/DV_date"
         android:maxLines="3"
         android:text="0000년 00월 00일 (월)"
         android:textSize="20dp"
@@ -115,14 +130,14 @@
         android:layout_height="wrap_content"/>
 
     <View
-        android:background="@color/gray"
+        android:background="@color/gray3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vacadate"
+        app:layout_constraintTop_toBottomOf="@+id/DV_date"
         android:layout_width="match_parent"
         android:layout_height="0.5dp" android:id="@+id/view3"/>
 
     <TextView
-        android:id="@+id/vacastarttext"
+        android:id="@+id/DV_startTimeText"
         android:text="시작 시간"
         android:textSize="20dp"
         android:padding="10dp"
@@ -133,25 +148,26 @@
         android:layout_height="60dp"/>
 
     <TextView
+        android:id="@+id/DV_startTime"
         android:text="00:00 AM"
         android:textSize="20dp"
         android:padding="10dp"
         android:gravity="start|center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/vacastarttext"
-        app:layout_constraintBottom_toBottomOf="@id/vacastarttext"
+        app:layout_constraintTop_toTopOf="@id/DV_startTimeText"
+        app:layout_constraintBottom_toBottomOf="@id/DV_startTimeText"
         android:layout_width="wrap_content"
         android:layout_height="0dp"/>
 
     <View
-        android:background="@color/gray"
+        android:background="@color/gray3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vacastarttext"
+        app:layout_constraintTop_toBottomOf="@+id/DV_startTimeText"
         android:layout_width="match_parent"
         android:layout_height="0.5dp" android:id="@+id/view4"/>
 
     <TextView
-        android:id="@+id/vacaendtext"
+        android:id="@+id/DV_endTimeText"
         android:text="종료 시간"
         android:textSize="20dp"
         android:padding="10dp"
@@ -162,20 +178,21 @@
         android:layout_height="60dp"/>
 
     <TextView
+        android:id="@+id/DV_endTime"
         android:text="00:00 AM"
         android:textSize="20dp"
         android:padding="10dp"
         android:gravity="start|center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/vacaendtext"
-        app:layout_constraintBottom_toBottomOf="@id/vacaendtext"
+        app:layout_constraintTop_toTopOf="@id/DV_endTimeText"
+        app:layout_constraintBottom_toBottomOf="@id/DV_endTimeText"
         android:layout_width="wrap_content"
         android:layout_height="0dp"/>
 
     <View
-        android:background="@color/gray"
+        android:background="@color/gray3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vacaendtext"
+        app:layout_constraintTop_toBottomOf="@+id/DV_endTimeText"
         android:layout_width="match_parent"
         android:layout_height="0.5dp" android:id="@+id/view5"/>
 
@@ -191,8 +208,9 @@
         android:layout_height="60dp"/>
 
     <TextView
+        android:id="@+id/DV_approve"
         android:textColor="@color/green"
-        android:text="연차"
+        android:text="승인"
         android:textSize="20dp"
         android:padding="10dp"
         android:gravity="start|center"
@@ -203,14 +221,14 @@
         android:layout_height="0dp"/>
 
     <View
-        android:background="@color/gray"
+        android:background="@color/gray3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vacasigntext"
         android:layout_width="match_parent"
         android:layout_height="0.5dp" android:id="@+id/view6"/>
 
     <TextView
-        android:id="@+id/vacamanagertext"
+        android:id="@+id/DV_approveManagerText"
         android:text="승인 관리자"
         android:textSize="20dp"
         android:padding="10dp"
@@ -221,25 +239,26 @@
         android:layout_height="60dp"/>
 
     <TextView
+        android:id="@+id/DV_approveManager"
         android:text="홍판서"
         android:textSize="20dp"
         android:padding="10dp"
         android:gravity="start|center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/vacamanagertext"
-        app:layout_constraintBottom_toBottomOf="@id/vacamanagertext"
+        app:layout_constraintTop_toTopOf="@id/DV_approveManagerText"
+        app:layout_constraintBottom_toBottomOf="@id/DV_approveManagerText"
         android:layout_width="wrap_content"
         android:layout_height="0dp"/>
 
     <View
-        android:background="@color/gray"
+        android:background="@color/gray3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vacamanagertext"
+        app:layout_constraintTop_toBottomOf="@+id/DV_approveManagerText"
         android:layout_width="match_parent"
         android:layout_height="0.5dp" android:id="@+id/view7"/>
 
     <TextView
-        android:id="@+id/vacasigndatetext"
+        android:id="@+id/DV_approveTimeText"
         android:text="승인 날짜"
         android:textSize="20dp"
         android:padding="10dp"
@@ -250,20 +269,21 @@
         android:layout_height="60dp"/>
 
     <TextView
+        android:id="@+id/DV_approveTime"
         android:text="0000년 00월 00일 (월) PM 8:30"
         android:textSize="20dp"
         android:padding="10dp"
         android:gravity="start|center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/vacasigndatetext"
-        app:layout_constraintBottom_toBottomOf="@id/vacasigndatetext"
+        app:layout_constraintTop_toTopOf="@id/DV_approveTimeText"
+        app:layout_constraintBottom_toBottomOf="@id/DV_approveTimeText"
         android:layout_width="wrap_content"
         android:layout_height="0dp"/>
 
     <View
-        android:background="@color/gray"
+        android:background="@color/gray3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vacasigndatetext"
+        app:layout_constraintTop_toBottomOf="@+id/DV_approveTimeText"
         android:layout_width="match_parent"
         android:layout_height="0.5dp" android:id="@+id/view8"/>
 
@@ -279,7 +299,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/vacareason"
+        android:id="@+id/DV_reason"
         android:hint="휴가 사유입니다."
         android:textSize="15dp"
         android:paddingHorizontal="10dp"
@@ -289,10 +309,21 @@
         android:layout_height="130dp"/>
 
     <View
-        android:background="@color/gray"
+        android:background="@color/gray3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vacareason"
+        app:layout_constraintTop_toBottomOf="@+id/DV_reason"
         android:layout_width="match_parent"
         android:layout_height="0.5dp" android:id="@+id/view9"/>
 
+    <ProgressBar
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:theme="@style/Widget.AppCompat.ProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/DV_progressBar"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

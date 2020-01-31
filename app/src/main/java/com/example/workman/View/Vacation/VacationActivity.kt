@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.workman.Adapter.VacationAdapter
 import com.example.workman.R
+import com.example.workman.View.Detail_Vacation.DetailvacaActivity
 import com.example.workman.View.Request_Vacation.ReqvacationActivity
 import com.example.workman.decorator.RangeDayDecorator
 import com.prolificinteractive.materialcalendarview.OnRangeSelectedListener
@@ -76,7 +77,7 @@ class VacationActivity : AppCompatActivity(), VacationContract.IVacationView,
     }
 
     private fun initialize() {
-        vacationAdapter = VacationAdapter(this)
+        vacationAdapter = VacationAdapter(this,0)
         V_recyclerView.layoutManager = layoutManager
         V_recyclerView.adapter = vacationAdapter
 
@@ -134,5 +135,9 @@ class VacationActivity : AppCompatActivity(), VacationContract.IVacationView,
 
     override fun toastMessage(text: String) {
         Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+    }
+
+    override fun detailVacation(idx: Int) {
+        startActivity(Intent(this, DetailvacaActivity::class.java).putExtra("idx",idx))
     }
 }

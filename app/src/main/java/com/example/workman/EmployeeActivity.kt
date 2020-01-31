@@ -25,12 +25,12 @@ class EmployeeActivity : AppCompatActivity() {
         E_passivebutton.setOnClickListener {
             E_passivebutton.background = ContextCompat.getDrawable(this, R.drawable.bottomline)
             E_activebutton.background = null
-            supportFragmentManager.beginTransaction().replace(R.id.E_container, passiveEmployeeFragment).commit();
+            supportFragmentManager.beginTransaction().replace(R.id.E_container, passiveEmployeeFragment).commit()
         }
         E_activebutton.setOnClickListener {
             E_activebutton.background = ContextCompat.getDrawable(this, R.drawable.bottomline)
             E_passivebutton.background = null
-            supportFragmentManager.beginTransaction().replace(R.id.E_container, activeEmployeeFragment).commit();
+            supportFragmentManager.beginTransaction().replace(R.id.E_container, activeEmployeeFragment).commit()
         }
 
         E_fab.setOnClickListener {
