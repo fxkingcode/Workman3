@@ -21,8 +21,6 @@ interface ManagerVacationContract {
         fun setEmployeeBackground(id:Int?)
         fun setWaitingBackground(id:Int?)
         fun finishActivity()
-        fun progressVisible()
-        fun progressInvisible()
         fun toastMessage(text:String)
     }
 }

@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat
 import com.prolificinteractive.materialcalendarview.DayViewDecorator
 
 
-class RangeDayDecorator(val context: Context) : DayViewDecorator {
+class RangeDayDecorator : DayViewDecorator {
 
     private val list = HashSet<CalendarDay>()
 

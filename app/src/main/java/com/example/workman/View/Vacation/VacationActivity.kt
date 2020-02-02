@@ -43,7 +43,7 @@ class VacationActivity : AppCompatActivity(), VacationContract.IVacationView,
     private val saturdayDecorator: SaturdayDecorator =
         SaturdayDecorator()
     private val rangeDayDecorator: RangeDayDecorator =
-        RangeDayDecorator(this)
+        RangeDayDecorator()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,7 +95,6 @@ class VacationActivity : AppCompatActivity(), VacationContract.IVacationView,
             this.setOnRangeSelectedListener(this@VacationActivity)
             this.setOnDateChangedListener(this@VacationActivity)
         }
-
     }
 
     override fun onDateSelected(
