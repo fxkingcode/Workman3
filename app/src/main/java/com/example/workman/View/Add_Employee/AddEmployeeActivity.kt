@@ -1,7 +1,8 @@
-package com.example.workman
+package com.example.workman.View.Add_Employee
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.workman.R
 
 class AddEmployeeActivity : AppCompatActivity() {
 

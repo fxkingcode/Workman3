@@ -14,9 +14,9 @@ class ManagerVacationPresenter(
         view.setEmployeeBackground(R.drawable.bottomline)
         view.setMyBackground(null)
         view.setWaitingBackground(null)
-//        view.employeeButtonEnable(false)
-//        view.myButtonEnable(true)
-//        view.waitingButtonEnable(true)
+        view.employeeButtonEnable(false)
+        view.myButtonEnable(true)
+        view.waitingButtonEnable(true)
     }
 
     override fun waitingVacation() {
@@ -24,9 +24,9 @@ class ManagerVacationPresenter(
         view.setWaitingBackground(R.drawable.bottomline)
         view.setEmployeeBackground(null)
         view.setMyBackground(null)
-//        view.waitingButtonEnable(false)
-//        view.myButtonEnable(true)
-//        view.employeeButtonEnable(true)
+        view.waitingButtonEnable(false)
+        view.myButtonEnable(true)
+        view.employeeButtonEnable(true)
     }
 
     override fun myVacation() {
@@ -34,9 +34,9 @@ class ManagerVacationPresenter(
         view.setMyBackground(R.drawable.bottomline)
         view.setEmployeeBackground(null)
         view.setWaitingBackground(null)
-//        view.myButtonEnable(false)
-//        view.employeeButtonEnable(true)
-//        view.waitingButtonEnable(true)
+        view.myButtonEnable(false)
+        view.employeeButtonEnable(true)
+        view.waitingButtonEnable(true)
     }
 
 }

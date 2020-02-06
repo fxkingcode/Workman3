@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:visibility="gone"
+        android:padding="10dp"
+        android:text="최고관리자"
+        android:textSize="18dp"
+        android:textColor="@color/gray4"
+        android:id="@+id/EI_position"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/EI_name"
+        android:padding="10dp"
+        android:textSize="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="홍길동"
+        app:layout_constraintTop_toBottomOf="@+id/EI_position"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/EI_state"
+        android:padding="10dp"
+        android:textSize="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="합류"
+        android:textColor="@color/green"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/EI_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/EI_name" />
+
+    <View
+        android:visibility="gone"
+        android:id="@+id/EI_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/gray3"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

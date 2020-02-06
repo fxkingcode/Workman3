@@ -1,6 +1,6 @@
-package com.example.workman.Adapter
+package com.example.workman.Model.DTO
 
-class ItemData constructor(private var colorid:Int, var colorname:String){
+class ColorData constructor(private var colorid:Int, var colorname:String){
 
     fun getcolorId(): Int {
         return colorid

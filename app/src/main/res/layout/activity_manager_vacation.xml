@@ -39,6 +39,7 @@
         android:layout_height="40dp"
         android:background="@drawable/bottomline"
         android:text="나의 휴가"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/MV_employeeVacation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView3" />
@@ -50,6 +51,7 @@
         android:layout_height="40dp"
         android:background="@null"
         android:text="직원 휴가"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/MV_waitingVacation"
         app:layout_constraintStart_toEndOf="@+id/MV_myVacation"
         app:layout_constraintTop_toBottomOf="@id/textView3" />
@@ -61,6 +63,7 @@
         android:layout_height="40dp"
         android:background="@null"
         android:text="승인대기 휴가"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/MV_employeeVacation"
         app:layout_constraintTop_toBottomOf="@id/textView3" />

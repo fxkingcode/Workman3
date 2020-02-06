@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmployeeActivity">
+    tools:context=".View.Employee.EmployeeActivity">
 
     <TextView
         android:id="@+id/textView3"
@@ -39,6 +39,7 @@
         android:layout_height="40dp"
         android:background="@drawable/bottomline"
         android:text="현재 직원"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@id/E_passivebutton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +52,7 @@
         android:layout_height="40dp"
         android:background="@null"
         android:text="비활성 직원"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/E_activebutton"
@@ -64,27 +66,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/E_activebutton" />
 
-    <FrameLayout
-        android:id="@+id/E_container"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/E_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/view"></androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/E_fab"
-        app:maxImageSize="56dp"
-        app:borderWidth="0dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
         android:backgroundTint="@color/sky"
-        app:fabSize="normal"
         android:scaleType="center"
-        app:srcCompat="@drawable/ic_add_black_24dp"/>
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="56dp"
+        app:srcCompat="@drawable/ic_add_black_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
