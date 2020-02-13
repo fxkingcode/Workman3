@@ -62,7 +62,7 @@ class EmployeePresenter(
         }
     }
 
-    fun callItems(isActive:Boolean) {
+    override fun callItems(isActive:Boolean) {
         employeeModel.callEmployees(context,"companyid",this,isActive)
     }
 

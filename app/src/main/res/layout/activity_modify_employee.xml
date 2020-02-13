@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Add_Employee.AddEmployeeActivity">
+    tools:context=".View.Modify_Employee.ModifyEmployeeActivity">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="직원 생성"
+        android:text="직원 수정"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,13 +25,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/AE_create"
+        android:id="@+id/ME_save"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:alpha="0.4"
         android:background="@null"
-        android:text="생성"
+        android:text="저장"
         android:textColor="@color/blue"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/AE_scroll"
+        android:id="@+id/ME_scroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,32 +60,33 @@
             android:focusableInTouchMode="true">
 
             <TextView
-                android:id="@+id/AE_nameText"
+                android:id="@+id/ME_nameText"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:gravity="start|center"
                 android:padding="10dp"
                 android:text="이름"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/AE_name"
+                app:layout_constraintBottom_toBottomOf="@+id/ME_name"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/AE_name" />
+                app:layout_constraintTop_toTopOf="@id/ME_name" />
 
             <ImageView
-                android:id="@+id/AE_nameCheck"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:id="@+id/ME_nameCheck"
                 android:alpha="0.4"
                 android:background="@drawable/ic_check_blue_24dp"
-                app:layout_constraintBottom_toBottomOf="@+id/AE_nameText"
-                app:layout_constraintStart_toEndOf="@+id/AE_nameText"
-                app:layout_constraintTop_toTopOf="@+id/AE_nameText" />
+                app:layout_constraintTop_toTopOf="@+id/ME_nameText"
+                app:layout_constraintBottom_toBottomOf="@+id/ME_nameText"
+                app:layout_constraintStart_toEndOf="@+id/ME_nameText"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
 
             <EditText
-                android:id="@+id/AE_name"
+                android:id="@+id/ME_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
+                android:layout_marginStart="80dp"
+                android:text="야야야ㅑ\n\n\n\n\n\n"
                 android:background="@null"
                 android:gravity="end|center"
                 android:hint="이름을 입력하세요"
@@ -94,7 +94,7 @@
                 android:padding="10dp"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/AE_nameText"
+                app:layout_constraintStart_toEndOf="@+id/ME_nameText"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
@@ -103,22 +103,22 @@
                 android:layout_height="0.5dp"
                 android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AE_name" />
+                app:layout_constraintTop_toBottomOf="@+id/ME_name" />
 
             <TextView
-                android:id="@+id/AE_positionText"
+                android:id="@+id/ME_positionText"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:gravity="start|center"
                 android:padding="10dp"
                 android:text="직책"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/AE_position"
+                app:layout_constraintBottom_toBottomOf="@id/ME_position"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/AE_position" />
+                app:layout_constraintTop_toTopOf="@+id/ME_position" />
 
             <Spinner
-                android:id="@+id/AE_position"
+                android:id="@+id/ME_position"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:entries="@array/position"
@@ -132,27 +132,27 @@
                 android:layout_height="0.5dp"
                 android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AE_position" />
+                app:layout_constraintTop_toBottomOf="@+id/ME_position" />
 
             <TextView
-                android:id="@+id/AE_groupText"
+                android:id="@+id/ME_groupText"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:gravity="start|center"
                 android:padding="10dp"
                 android:text="그룹"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/AE_group"
+                app:layout_constraintBottom_toBottomOf="@id/ME_group"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/AE_group" />
+                app:layout_constraintTop_toTopOf="@+id/ME_group" />
 
             <Button
-                android:id="@+id/AE_group"
                 style="?android:attr/borderlessButtonStyle"
-                android:layout_width="100dp"
-                android:layout_height="60dp"
+                android:id="@+id/ME_group"
                 android:background="@null"
                 android:text="선택 안함"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view3" />
 
@@ -162,22 +162,22 @@
                 android:layout_height="0.5dp"
                 android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AE_group" />
+                app:layout_constraintTop_toBottomOf="@+id/ME_group" />
 
             <TextView
-                android:id="@+id/AE_emailText"
+                android:id="@+id/ME_emailText"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:gravity="start|center"
                 android:padding="10dp"
                 android:text="이메일"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/AE_email"
+                app:layout_constraintBottom_toBottomOf="@+id/ME_email"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/AE_email" />
+                app:layout_constraintTop_toTopOf="@id/ME_email" />
 
             <EditText
-                android:id="@+id/AE_email"
+                android:id="@+id/ME_email"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@null"
@@ -188,7 +188,7 @@
                 android:padding="10dp"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/AE_name"
+                app:layout_constraintStart_toStartOf="@+id/ME_name"
                 app:layout_constraintTop_toBottomOf="@+id/view4" />
 
             <View
@@ -197,22 +197,22 @@
                 android:layout_height="0.5dp"
                 android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AE_email" />
+                app:layout_constraintTop_toBottomOf="@+id/ME_email" />
 
             <TextView
-                android:id="@+id/AE_phoneText"
+                android:id="@+id/ME_phoneText"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:gravity="start|center"
                 android:padding="10dp"
                 android:text="전화번호"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/AE_phone"
+                app:layout_constraintBottom_toBottomOf="@+id/ME_phone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/AE_phone" />
+                app:layout_constraintTop_toTopOf="@id/ME_phone" />
 
             <EditText
-                android:id="@+id/AE_phone"
+                android:id="@+id/ME_phone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@null"
@@ -223,7 +223,7 @@
                 android:padding="10dp"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/AE_name"
+                app:layout_constraintStart_toStartOf="@+id/ME_name"
                 app:layout_constraintTop_toBottomOf="@+id/view5" />
 
             <View
@@ -232,10 +232,10 @@
                 android:layout_height="0.5dp"
                 android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AE_phone" />
+                app:layout_constraintTop_toBottomOf="@+id/ME_phone" />
 
             <TextView
-                android:id="@+id/AE_memoText"
+                android:id="@+id/ME_memoText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start|center"
@@ -243,10 +243,10 @@
                 android:text="메모"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view7" />
+                app:layout_constraintTop_toBottomOf="@+id/view6" />
 
             <EditText
-                android:id="@+id/AE_memo"
+                android:id="@+id/ME_memo"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 android:background="@null"
@@ -255,7 +255,7 @@
                 android:paddingHorizontal="10dp"
                 android:scrollbars="vertical"
                 android:textSize="15dp"
-                app:layout_constraintTop_toBottomOf="@+id/AE_memoText" />
+                app:layout_constraintTop_toBottomOf="@+id/ME_memoText" />
 
             <View
                 android:id="@+id/view8"
@@ -263,38 +263,39 @@
                 android:layout_height="0.5dp"
                 android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AE_memo" />
+                app:layout_constraintTop_toBottomOf="@+id/ME_memo" />
 
-            <TextView
-                android:id="@+id/AE_inviteText"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
+            <Button
                 android:gravity="start|center"
-                android:padding="10dp"
-                android:text="직원 초대"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/AE_invite"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/AE_invite" />
-
-            <RadioButton
-                android:id="@+id/AE_invite"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:padding="10dp"
-                android:scrollbars="vertical"
-                android:text="전화번호로 초대하기"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view6" />
+                android:drawableStart="@drawable/inactive_edit"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                android:text="직원 비활성화"
+                android:background="@null"
+                android:id="@+id/ME_inactive"
+                app:layout_constraintTop_toBottomOf="@+id/ME_memo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
 
             <View
-                android:id="@+id/view7"
+                android:id="@+id/view9"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AE_invite" />
-
+                app:layout_constraintTop_toBottomOf="@+id/ME_inactive" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:theme="@style/Widget.AppCompat.ProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ME_progressBar"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

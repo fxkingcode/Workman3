@@ -27,6 +27,8 @@ class DetailvacaActivity : AppCompatActivity(), DetailvacaContract.IDetailvacaVi
     private fun initialize() {
         presenter = DetatilvacaPresenter(this, this)
         idx = intent.getIntExtra("idx", -1)
+
+        DV_cancel.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {

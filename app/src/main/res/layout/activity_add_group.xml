@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddGroupActivity">
+    tools:context=".View.Add_Group.AddGroupActivity">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="그룹 생성"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,13 +25,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/AG_create"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:background="@null"
         android:text="생성"
-        android:textColor="@color/transparentblue"
-        android:textSize="18dp"
+        android:alpha="0.4"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,7 +47,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/RV_scroll"
+        android:id="@+id/AG_scroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,30 +61,28 @@
             android:focusableInTouchMode="true">
 
             <TextView
-                android:id="@+id/groupnametext"
+                android:id="@+id/AG_nametext"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:gravity="start|center"
                 android:padding="10dp"
                 android:text="그룹 명"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="@+id/groupname"
-                app:layout_constraintTop_toTopOf="@id/groupname" />
+                app:layout_constraintBottom_toBottomOf="@+id/AG_name"
+                app:layout_constraintTop_toTopOf="@id/AG_name" />
 
             <EditText
-                android:id="@+id/groupname"
+                android:id="@+id/AG_name"
                 android:hint="그룹 명을 입력하세요"
-                android:scrollbars="vertical"
                 android:padding="10dp"
                 android:minHeight="60dp"
-                android:maxLines="3"
                 android:gravity="end|center"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:background="@null"
-                android:layout_marginLeft="100dp"
+                android:layout_marginStart="100dp"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/groupnametext"
+                app:layout_constraintStart_toEndOf="@+id/AG_nametext"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
@@ -91,99 +91,82 @@
                 android:id="@+id/view2"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gray"
+                android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/groupname" />
+                app:layout_constraintTop_toBottomOf="@+id/AG_name" />
 
             <TextView
-                android:id="@+id/grouppersonneltext"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:gravity="start|center"
-                android:padding="10dp"
-                android:text="인원"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/grouppersonnel"
-                app:layout_constraintTop_toTopOf="@+id/grouppersonnel"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <Spinner
-                android:entries="@array/personnel"
-                android:id="@+id/grouppersonnel"
-                android:padding="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/view2"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"/>
-
-            <View
-                android:id="@+id/view3"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/gray"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/grouppersonnel" />
-
-            <TextView
-                android:id="@+id/groupmarkertext"
+                android:id="@+id/AG_markertext"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:gravity="start|center"
                 android:padding="10dp"
                 android:text="표식"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/groupmarker"
-                app:layout_constraintTop_toTopOf="@+id/groupmarker"
+                app:layout_constraintBottom_toBottomOf="@id/AG_marker"
+                app:layout_constraintTop_toTopOf="@+id/AG_marker"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Spinner
-                android:id="@+id/groupmarker"
+                android:id="@+id/AG_marker"
                 android:padding="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/view3"
+                app:layout_constraintTop_toBottomOf="@+id/view2"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="100dp"
                 android:layout_height="60dp"/>
 
             <View
-                android:id="@+id/view4"
+                android:id="@+id/view3"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gray"
+                android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/groupmarker"/>
+                app:layout_constraintTop_toBottomOf="@+id/AG_marker"/>
 
             <TextView
-                android:id="@+id/groupmemotext"
+                android:id="@+id/AG_memotext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start|center"
                 android:padding="10dp"
                 android:text="메모"
-                android:textSize="20dp"
-                app:layout_constraintTop_toBottomOf="@+id/view4"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/view3"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:background="@null"
                 android:hint="그룹 메모"
-                android:id="@+id/groupmemo"
+                android:id="@+id/AG_memo"
                 android:gravity="start"
-                android:textSize="15dp"
-                android:paddingHorizontal="10dp"
+                android:textSize="15sp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:scrollbars="vertical"
-                app:layout_constraintTop_toBottomOf="@+id/groupmemotext"
+                app:layout_constraintTop_toBottomOf="@+id/AG_memotext"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"/>
 
             <View
-                android:id="@+id/view5"
+                android:id="@+id/view4"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gray"
+                android:background="@color/gray3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/groupmemo"/>
+                app:layout_constraintTop_toBottomOf="@+id/AG_memo"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+    <ProgressBar
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:theme="@style/Widget.AppCompat.ProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/AG_progressBar"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

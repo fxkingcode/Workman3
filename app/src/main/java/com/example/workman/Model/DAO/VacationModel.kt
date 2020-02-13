@@ -279,7 +279,7 @@ class VacationModel {
         params["idx"] = idx
 
         //api통신 여기서
-        VacationItem( //idx로 vacation을 찾은 후 vacation에 저장된 email로 employee를 찾고 두 데이터를 가져온다
+        VacationItem(
             1,
             "이름",
             "연차",

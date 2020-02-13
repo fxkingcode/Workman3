@@ -15,6 +15,7 @@ interface EmployeeContract {
         var adapterPassiveView: EmployeeAdapterContract.View?
         fun activeEmployee()
         fun passiveEmployee()
+        fun callItems(isActive:Boolean)
     }
 
     interface IEmployeeView{

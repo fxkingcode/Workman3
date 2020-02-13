@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.workman.Adapter.EmployeeAdapter
 import com.example.workman.View.Add_Employee.AddEmployeeActivity
 import com.example.workman.R
+import com.example.workman.View.Detail_Employee.DetailEmployeeActivity
 import kotlinx.android.synthetic.main.activity_employee.*
 
 class EmployeeActivity : AppCompatActivity(), EmployeeContract.IEmployeeView,View.OnClickListener{
@@ -44,6 +45,7 @@ class EmployeeActivity : AppCompatActivity(), EmployeeContract.IEmployeeView,Vie
 
         E_activebutton.setOnClickListener(this)
         E_passivebutton.setOnClickListener(this)
+        E_fab.setOnClickListener(this)
     }
 
     override fun changeActiveAdapter()
@@ -103,6 +105,6 @@ class EmployeeActivity : AppCompatActivity(), EmployeeContract.IEmployeeView,Vie
 
     override fun detailEmployee(idx:Int)
     {
-//        startActivity(Intent(this, Detail::class.java).putExtra("idx", idx))
+        startActivity(Intent(this, DetailEmployeeActivity::class.java).putExtra("idx", idx))
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GroupActivity">
+    tools:context=".View.Group.GroupActivity">
 
     <TextView
         app:layout_constraintTop_toTopOf="parent"
@@ -31,6 +31,7 @@
         android:layout_height="1dp" android:id="@+id/view"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/G_recyclerview"
         app:layout_constraintTop_toBottomOf="@+id/view"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
@@ -49,5 +50,17 @@
         app:fabSize="normal"
         android:scaleType="center"
         app:srcCompat="@drawable/ic_add_black_24dp"/>
+
+    <ProgressBar
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:theme="@style/Widget.AppCompat.ProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/G_progressBar"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

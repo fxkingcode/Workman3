@@ -4,5 +4,6 @@ data class GroupDto(
     val idx: Int,
     val name: String?,
     val marker:String?,
-    val memo:String?
+    val memo:String?,
+    var employees:ArrayList<String>?
 )

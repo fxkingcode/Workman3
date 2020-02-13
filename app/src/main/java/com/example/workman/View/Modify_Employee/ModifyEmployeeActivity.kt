@@ -1,4 +1,4 @@
-package com.example.workman.View.Add_Employee
+package com.example.workman.View.Modify_Employee
 
 import android.app.Activity
 import android.content.Intent
@@ -12,33 +12,35 @@ import android.widget.Toast
 import com.example.workman.Model.DTO.SelectGroupData
 import com.example.workman.R
 import com.example.workman.View.Select_Group.SelectGroupActivity
-import kotlinx.android.synthetic.main.activity_add_employee.*
-import kotlinx.android.synthetic.main.activity_reqvacation.*
+import kotlinx.android.synthetic.main.activity_modify_employee.*
 
-class AddEmployeeActivity : AppCompatActivity(), AddEmployeeContract.IAddEmployeeView,
+class ModifyEmployeeActivity : AppCompatActivity(), ModifyEmployeeContract.IModifyEmployeeView,
     View.OnClickListener {
-    private var presenter: AddEmployeePresenter? = null
+
+    private var presenter: ModifyEmployeePresenter? = null
     private var groupArray: ArrayList<SelectGroupData>? = null
     private val SELECTGROUP: Int = 1
     private var positionAdapter: ArrayAdapter<CharSequence>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_employee)
+        setContentView(R.layout.activity_modify_employee)
 
         initialize()
+        presenter?.getIntent(intent)
     }
 
     private fun initialize() {
-        presenter = AddEmployeePresenter(this, this)
+        presenter = ModifyEmployeePresenter(this, this)
         positionAdapter = ArrayAdapter.createFromResource(
             this,
             R.array.position,
             android.R.layout.simple_dropdown_item_1line
         )
-        AE_position.adapter = positionAdapter
+        ME_position.adapter = positionAdapter
         groupArray = ArrayList()
-        AE_name.addTextChangedListener(object : TextWatcher {
+
+        ME_name.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 presenter?.nameChange(s.toString())
             }
@@ -50,36 +52,48 @@ class AddEmployeeActivity : AppCompatActivity(), AddEmployeeContract.IAddEmploye
             }
         })
 
-        AE_group.setOnClickListener(this)
-        AE_create.setOnClickListener(this)
+        ME_save.setOnClickListener(this)
+        ME_group.setOnClickListener(this)
+    }
+
+    override fun setInactiveButtonVisible(boolean: Boolean) {
+        if (boolean) {
+            ME_inactive.visibility = View.VISIBLE
+        } else {
+            ME_inactive.visibility = View.INVISIBLE
+        }
+    }
+
+    override fun setNameText(text: String) {
+        ME_name.setText(text)
+    }
+
+    override fun setPositionText(text: String) {
+        positionAdapter?.getPosition(text)?.let { ME_position.setSelection(it) }
+    }
+
+    override fun setEmailText(text: String) {
+        ME_email.setText(text)
+    }
+
+    override fun setPhoneText(text: String) {
+        ME_phone.setText(text)
+    }
+
+    override fun setMemoText(text: String) {
+        ME_memo.setText(text)
     }
 
     override fun checkAlpha(float: Float) {
-        AE_nameCheck.alpha = float
+        ME_nameCheck.alpha = float
     }
 
-    override fun activeCreate(boolean: Boolean) {
-        AE_create.isEnabled = boolean
+    override fun activeSave(boolean: Boolean) {
+        ME_save.isEnabled = boolean
     }
 
-    override fun createAlpha(float: Float) {
-        AE_create.alpha = float
-    }
-
-    override fun finishActivity() {
-        finish()
-    }
-
-    override fun progressVisible() {
-        RV_progressBar.visibility = View.VISIBLE
-    }
-
-    override fun progressInvisible() {
-        RV_progressBar.visibility = View.INVISIBLE
-    }
-
-    override fun toastMessage(text: String) {
-        Toast.makeText(this, text, Toast.LENGTH_LONG).show()
+    override fun saveAlpha(float: Float) {
+        ME_save.alpha = float
     }
 
     override fun selectGroup() {
@@ -104,7 +118,7 @@ class AddEmployeeActivity : AppCompatActivity(), AddEmployeeContract.IAddEmploye
     }
 
     override fun setGroupButtonText(text: String) {
-        AE_group.text = text
+        ME_group.text = text
     }
 
     override fun addGroupArray(arrayList: ArrayList<SelectGroupData>) {
@@ -113,20 +127,27 @@ class AddEmployeeActivity : AppCompatActivity(), AddEmployeeContract.IAddEmploye
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.AE_group -> {
+            R.id.ME_save -> {
+            }
+            R.id.ME_group -> {
                 presenter?.groupClick()
             }
-            R.id.AE_create -> {
-                presenter?.create(
-                    AE_name.toString(),
-                    AE_position.selectedItem.toString(),
-                    groupArray,
-                    AE_email.toString(),
-                    AE_phone.toString(),
-                    AE_invite.isChecked,
-                    AE_memo.toString()
-                )
-            }
         }
+    }
+
+    override fun finishActivity() {
+        finish()
+    }
+
+    override fun progressVisible(boolean: Boolean) {
+        if (boolean) {
+            ME_progressBar.visibility = View.VISIBLE
+        } else {
+            ME_progressBar.visibility = View.INVISIBLE
+        }
+    }
+
+    override fun toastMessage(text: String) {
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show()
     }
 }

@@ -10,8 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.workman.View.Employee.EmployeeActivity
+import com.example.workman.View.Group.GroupActivity
 import com.example.workman.View.Manager_Vacation.ManagerVacationActivity
-import com.example.workman.View.SelectGroup.SelectGroupActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_menu.view.*
 
@@ -51,7 +51,7 @@ class MenuFragment : Fragment() {
         }
 
         rootView.groupbutton.setOnClickListener {
-            val nextIntent = Intent(activity, SelectGroupActivity::class.java)
+            val nextIntent = Intent(activity, GroupActivity::class.java)
             startActivity(nextIntent)
         }
 

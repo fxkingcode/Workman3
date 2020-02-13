@@ -1,5 +1,6 @@
 package com.example.workman.View.Manager_Vacation
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import com.example.workman.R
 import com.example.workman.View.Detail_Vacation.DetatilvacaPresenter
 import com.example.workman.View.Employee_Vacation.EmployeeVacationFragment
 import com.example.workman.View.My_Vacation.MyVacationFragment
+import com.example.workman.View.Request_Vacation.ReqvacationActivity
 import com.example.workman.View.Waiting_Vacation.WaitingVacationFragment
 import kotlinx.android.synthetic.main.activity_detailvaca.*
 import kotlinx.android.synthetic.main.activity_manager_vacation.*
@@ -38,6 +40,7 @@ class ManagerVacationActivity : AppCompatActivity(), ManagerVacationContract.IMa
         MV_myVacation.setOnClickListener(this)
         MV_employeeVacation.setOnClickListener(this)
         MV_waitingVacation.setOnClickListener(this)
+        MV_fab.setOnClickListener(this)
     }
 
     override fun changeMyFragemnt() {
@@ -121,6 +124,9 @@ class ManagerVacationActivity : AppCompatActivity(), ManagerVacationContract.IMa
             }
             R.id.MV_waitingVacation -> {
                 presenter?.waitingVacation()
+            }
+            R.id.MV_fab ->{
+                startActivity(Intent(this, ReqvacationActivity::class.java))
             }
         }
     }

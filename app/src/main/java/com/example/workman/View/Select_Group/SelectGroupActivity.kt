@@ -1,21 +1,17 @@
-package com.example.workman.View.SelectGroup
+package com.example.workman.View.Select_Group
 
 import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.workman.Adapter.EmployeeAdapter
 import com.example.workman.Adapter.GroupAdapter
-import com.example.workman.Model.DTO.GroupCheck
+import com.example.workman.Model.DTO.SelectGroupData
 import com.example.workman.R
-import com.example.workman.View.Employee.EmployeePresenter
-import com.example.workman.View.Request_Vacation.ReqvacationPresenter
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import kotlinx.android.synthetic.main.activity_reqvacation.*
 import kotlinx.android.synthetic.main.activity_select_group.*
 
@@ -33,6 +29,7 @@ class SelectGroupActivity : AppCompatActivity(), SelectGroupContract.ISelectGrou
 
         initialize()
         presenter?.callGroups()
+        presenter?.getIntent(intent)
     }
 
     private fun initialize() {
@@ -49,11 +46,23 @@ class SelectGroupActivity : AppCompatActivity(), SelectGroupContract.ISelectGrou
             adapter = groupAdapter
         }
 
+        SG_search.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                presenter?.filter(s.toString())
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
+
         SG_allSelect.setOnClickListener(this)
         SG_complete.setOnClickListener(this)
     }
 
-    override fun finishActivity(arrayList: ArrayList<GroupCheck>) {
+    override fun finishActivity(arrayList: ArrayList<SelectGroupData>) {
         setResult(Activity.RESULT_OK, Intent().putExtra("GroupCheck",arrayList))
         finish()
     }
