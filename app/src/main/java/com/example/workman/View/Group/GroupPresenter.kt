@@ -45,7 +45,7 @@ class GroupPresenter(
 
     private fun onClickListener(position: Int) {
         adapterModel?.getItem(position).let {
-            it?.idx?.let { it1 -> view.detailGroup(it1) }
+            it?.id?.let { it1 -> view.detailGroup(it1) }
         }
     }
 }

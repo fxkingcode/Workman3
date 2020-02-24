@@ -8,13 +8,16 @@ import kotlin.collections.ArrayList
 
 interface ModifyEmployeeContract {
     interface IModifyEmployeePresenter {
+        fun modifySave()
         fun getIntent(intent: Intent)
         fun nameChange(text: String)
         fun groupClick()
         fun groupClickResult(data: Intent?)
+        fun activeChange(boolean: Boolean)
     }
 
     interface IModifyEmployeeView {
+        fun setActiveButtonVisible(boolean: Boolean)
         fun setInactiveButtonVisible(boolean: Boolean)
         fun setNameText(text: String)
         fun setPositionText(text: String)
@@ -35,5 +38,7 @@ interface ModifyEmployeeContract {
     interface Listener {
         fun onSuccess()
         fun onFailure()
+        fun onActiveSuccess(boolean: Boolean)
+        fun onActiveFailure()
     }
 }

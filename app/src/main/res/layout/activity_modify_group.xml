@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Modify_Group.ModifyGroupActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="그룹 수정"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/ic_chevron_left_black_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/MG_save"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@null"
+        android:text="저장"
+        android:alpha="0.4"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="55dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/MG_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="beforeDescendants"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:id="@+id/MG_nametext"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:gravity="start|center"
+                android:padding="10dp"
+                android:text="그룹 명"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/MG_name"
+                app:layout_constraintTop_toTopOf="@id/MG_name" />
+
+            <EditText
+                android:id="@+id/MG_name"
+                android:hint="그룹 명을 입력하세요"
+                android:padding="10dp"
+                android:minHeight="60dp"
+                android:gravity="end|center"
+                android:textSize="20sp"
+                android:background="@null"
+                android:layout_marginStart="100dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/MG_nametext"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/MG_name" />
+
+            <TextView
+                android:id="@+id/MG_markertext"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:gravity="start|center"
+                android:padding="10dp"
+                android:text="표식"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/MG_marker"
+                app:layout_constraintTop_toTopOf="@+id/MG_marker"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/MG_marker"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="100dp"
+                android:layout_height="60dp"/>
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/MG_marker"/>
+
+            <TextView
+                android:id="@+id/MG_memotext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start|center"
+                android:padding="10dp"
+                android:text="메모"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/view3"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:background="@null"
+                android:hint="그룹 메모"
+                android:id="@+id/MG_memo"
+                android:gravity="start"
+                android:textSize="15sp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:scrollbars="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/MG_memotext"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"/>
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/MG_memo"/>
+
+            <Button
+                android:gravity="start|center"
+                android:drawableStart="@drawable/ic_delete_black"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                android:text="그룹 삭제"
+                android:background="@null"
+                android:id="@+id/MG_delete"
+                app:layout_constraintTop_toBottomOf="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <View
+                android:id="@+id/view9"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/MG_delete" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+    <ProgressBar
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:theme="@style/Widget.AppCompat.ProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/MG_progressBar"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

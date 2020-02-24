@@ -16,7 +16,7 @@ class DetailEmployeePresenter(
     private var groupCheckArray: ArrayList<SelectGroupData> = ArrayList()
 
     private var employeeModel: EmployeeModel =
-        EmployeeModel()
+        EmployeeModel(context)
     private var groupModel: GroupModel = GroupModel()
 
     override fun callEmployee(idx: Int) {
@@ -59,7 +59,7 @@ class DetailEmployeePresenter(
     }
 
     override fun onGroupSuccess(group: GroupDto) {
-        val selectGroup = group.name?.let { SelectGroupData(group.idx, it) }
+        val selectGroup = group.name?.let { group.id?.let { it1 -> SelectGroupData(it1, it) } }
         selectGroup?.let { groupCheckArray.add(it) }
 
         if (view.getGroupText() == "") {

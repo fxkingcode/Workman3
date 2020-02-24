@@ -46,7 +46,7 @@ class MyVacationPresenter(
 
     private fun onClickListener(position: Int) {
         adapterModel?.getItem(position).let {
-            it?.idx?.let { it1 -> view.detailVacation(it1) }
+            it?.id?.let { it1 -> view.detailVacation(it1) }
         }
     }
 

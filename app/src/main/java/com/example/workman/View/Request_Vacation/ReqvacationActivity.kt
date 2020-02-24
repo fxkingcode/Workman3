@@ -7,21 +7,16 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
-import android.widget.TimePicker
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.workman.R
-import com.example.workman.View.Vacation.VacationPresenter
-import com.example.workman.decorator.RangeDayDecorator
-import com.example.workman.decorator.SaturdayDecorator
-import com.example.workman.decorator.SundayDecorator
+import com.example.workman.Decorator.SaturdayDecorator
+import com.example.workman.Decorator.SundayDecorator
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView.*
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener
-import com.prolificinteractive.materialcalendarview.OnRangeSelectedListener
 import kotlinx.android.synthetic.main.activity_reqvacation.*
-import kotlinx.android.synthetic.main.activity_vacation.*
 
 class ReqvacationActivity : AppCompatActivity(), ReqvacationContract.IReqvacationView,
     OnDateSelectedListener, View.OnClickListener {

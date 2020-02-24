@@ -16,7 +16,7 @@ class EmployeePresenter(
 ) : EmployeeContract.IEmployeePresenter, EmployeeContract.Listener {
 
     private var employeeModel: EmployeeModel =
-        EmployeeModel()
+        EmployeeModel(context)
 
     override var adapterActiveModel: EmployeeAdapterContract.Model? = null
     override var adapterActiveView: EmployeeAdapterContract.View? = null
@@ -52,13 +52,13 @@ class EmployeePresenter(
 
     private fun onActiveClickListener(position: Int) {
         adapterActiveModel?.getItem(position).let {
-            it?.idx?.let { it1 -> view.detailEmployee(it1) }
+            it?.id?.let { it1 -> view.detailEmployee(it1) }
         }
     }
 
     private fun onPassiveClickListener(position: Int) {
         adapterPassiveModel?.getItem(position).let {
-            it?.idx?.let { it1 -> view.detailEmployee(it1) }
+            it?.id?.let { it1 -> view.detailEmployee(it1) }
         }
     }
 

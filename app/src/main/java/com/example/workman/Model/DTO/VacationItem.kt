@@ -3,7 +3,7 @@ package com.example.workman.Model.DTO
 import java.util.*
 
 data class VacationItem(
-    val idx: Int?,
+    val id: Int?,
     val name:String,
     val type: String,
     val date: Date,

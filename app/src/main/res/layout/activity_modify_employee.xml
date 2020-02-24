@@ -86,7 +86,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
-                android:text="야야야ㅑ\n\n\n\n\n\n"
                 android:background="@null"
                 android:gravity="end|center"
                 android:hint="이름을 입력하세요"
@@ -266,6 +265,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/ME_memo" />
 
             <Button
+                android:visibility="invisible"
+                android:gravity="start|center"
+                android:drawableStart="@drawable/active_edit"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:text="직원 활성화"
+                android:background="@null"
+                android:id="@+id/ME_active"
+                app:layout_constraintTop_toBottomOf="@+id/ME_memo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <Button
+                android:visibility="invisible"
                 android:gravity="start|center"
                 android:drawableStart="@drawable/inactive_edit"
                 android:textColor="@color/red"

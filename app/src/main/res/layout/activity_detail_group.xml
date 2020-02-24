@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Detail_Employee.DetailEmployeeActivity">
+    tools:context=".View.Detail_Group.DetailGroupActivity">
 
     <TextView
         android:id="@+id/textView3"
@@ -195,10 +195,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view4" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <TextView
+        android:id="@+id/DG_employees"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="15dp"
+        android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@+id/DG_employeeText"
         android:layout_width="match_parent"
-        android:layout_height="250dp"/>
+        android:layout_height="200dp"/>
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DG_employees" />
 
     <ProgressBar
         android:id="@+id/DG_progressBar"

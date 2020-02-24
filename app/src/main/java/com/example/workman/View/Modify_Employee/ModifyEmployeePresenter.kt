@@ -2,6 +2,7 @@ package com.example.workman.View.Modify_Employee
 
 import android.content.Context
 import android.content.Intent
+import com.example.workman.Model.DAO.EmployeeModel
 import com.example.workman.Model.DTO.SelectGroupData
 
 class ModifyEmployeePresenter(
@@ -9,6 +10,7 @@ class ModifyEmployeePresenter(
     val view: ModifyEmployeeContract.IModifyEmployeeView
 ) : ModifyEmployeeContract.IModifyEmployeePresenter, ModifyEmployeeContract.Listener {
     private var idx: Int? = null
+    private val employeeModel:EmployeeModel = EmployeeModel(context)
 
     override fun getIntent(intent: Intent) {
         if (intent.hasExtra("email")) {
@@ -27,6 +29,7 @@ class ModifyEmployeePresenter(
             view.setMemoText(intent.getStringExtra("memo"))
         }
         if (intent.hasExtra("isActive")) {
+            view.setActiveButtonVisible(!intent.getBooleanExtra("isActive", false))
             view.setInactiveButtonVisible(intent.getBooleanExtra("isActive", false))
         }
         idx = intent.getIntExtra("idx", -1)
@@ -42,6 +45,16 @@ class ModifyEmployeePresenter(
                     else -> view.setGroupButtonText("${array.size}개 선택")
                 }
             }
+        }
+    }
+
+    override fun activeChange(boolean: Boolean) {
+        if(boolean)//활성화하기 다이얼로그
+        {
+
+        }else//비활성화하기 다이얼로그
+        {
+
         }
     }
 
@@ -73,6 +86,18 @@ class ModifyEmployeePresenter(
 
     override fun groupClick() {
         view.selectGroup()
+    }
+
+    override fun modifySave() {
+        employeeModel.modifyEmployee()
+    }
+
+    override fun onActiveFailure() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onActiveSuccess(boolean: Boolean) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun onSuccess() {

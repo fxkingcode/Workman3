@@ -1,26 +1,35 @@
 package com.example.workman.View.Detail_Group
 
+import android.content.Intent
 import com.example.workman.Model.DTO.EmployeeDto
 import com.example.workman.Model.DTO.GroupDto
 import com.example.workman.Model.DTO.SelectGroupData
 
 interface DetailGroupContract {
-    interface IDetailGroupPresenter{
-        fun callGroup(idx:Int)
+    interface IDetailGroupPresenter {
+        fun callGroup()
         fun modifyClick()
+        fun getIntent(intent: Intent)
     }
 
-    interface IDetailGroupView{
+    interface IDetailGroupView
+    {
+        fun modifyGroup(group:GroupDto)
+        fun setNameText(text: String)
+        fun setMarkerText(text: String)
+        fun setMarkerBackground(int: Int)
+        fun setMemoText(text: String)
+        fun setPersonnelText(text: String)
+        fun setEmployeesText(text: String)
         fun finishActivity()
         fun progressVisible(boolean: Boolean)
-        fun toastMessage(text:String)
+        fun toastMessage(text: String)
     }
 
-    interface Listener
-    {
-        fun onSuccess(employee: EmployeeDto)
+    interface Listener {
+        fun onSuccess(group: GroupDto)
         fun onFailure()
-        fun onEmployeeSuccess(group: GroupDto)
+        fun onEmployeeSuccess(employeeDto: EmployeeDto)
         fun onEmployeeFailure()
     }
 }

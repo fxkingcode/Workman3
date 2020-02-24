@@ -43,8 +43,12 @@ class GroupAdapter(val context: Context, private val itemType: Int) :
     override fun allCheck(boolean: Boolean) {
         if (boolean) {
             for (i in 0 until items.size) {
-                if (!checkArray.contains(SelectGroupData(items[i].idx, items[i].name.toString()))) {
-                    checkArray.add(SelectGroupData(items[i].idx, items[i].name.toString()))
+                if (!checkArray.contains(items[i].id?.let { SelectGroupData(it, items[i].name.toString()) })) {
+                    items[i].id?.let { SelectGroupData(it, items[i].name.toString()) }?.let {
+                        checkArray.add(
+                            it
+                        )
+                    }
                 }
             }
         } else {

@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".View.Detail_Group.DetailGroupActivity"></activity>
+        <activity android:name=".View.Modify_Group.ModifyGroupActivity"></activity>
+        <activity android:name=".View.Detail_Group.DetailGroupActivity" />
         <activity android:name=".View.Modify_Employee.ModifyEmployeeActivity" />
         <activity android:name=".View.Detail_Employee.DetailEmployeeActivity" />
         <activity android:name=".View.Select_Group.SelectGroupActivity" />

@@ -94,7 +94,7 @@ class DetailEmployeeActivity : AppCompatActivity(),DetailEmployeeContract.IDetai
     override fun modifyEmployee(employee:EmployeeDto,groupCheckArray:ArrayList<SelectGroupData>)
     {
         var intent = Intent(this, ModifyEmployeeActivity::class.java)
-        intent.putExtra("idx",employee.idx)
+        intent.putExtra("idx",employee.id)
         intent.putExtra("email",employee.email)
         intent.putExtra("phone",employee.phone)
         intent.putExtra("name",employee.name)

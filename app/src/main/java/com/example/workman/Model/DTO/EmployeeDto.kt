@@ -1,7 +1,7 @@
 package com.example.workman.Model.DTO
 
 data class EmployeeDto(
-    val idx: Int,
+    val id: Int?,
     val name: String?,
     val position: String?,
     val group: ArrayList<String>?,

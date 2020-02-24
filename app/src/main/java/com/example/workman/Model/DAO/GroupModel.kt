@@ -3,10 +3,16 @@ package com.example.workman.Model.DAO
 import android.content.Context
 import com.example.workman.Model.DTO.GroupDto
 import com.example.workman.View.Detail_Employee.DetailEmployeeContract
+import com.example.workman.View.Detail_Group.DetailGroupContract
 import com.example.workman.View.Group.GroupContract
 import com.example.workman.View.Select_Group.SelectGroupContract
 
 class GroupModel {
+
+    fun modifyGroup()
+    {
+
+    }
 
     fun callGroups(
         context: Context,
@@ -133,6 +139,36 @@ class GroupModel {
     fun callGroup(
         context: Context,
         companyId: String,
+        groupId: Int,
+        listener: DetailGroupContract.Listener
+    ) {//오버로딩
+        val params = HashMap<String, Any>()
+
+        params["Company"] = companyId
+        params["group"] = groupId
+
+        //api통신 여기서.
+
+        var arrayList = ArrayList<String>()
+        arrayList.add("직원1")
+        arrayList.add("직원2")
+        arrayList.add("직원3")
+        arrayList.add("직원4")
+        arrayList.add("직원5")
+        arrayList.add("직원6")
+        arrayList.add("직원7")
+        arrayList.add("직원8")
+        arrayList.add("직원9")
+        arrayList.add("직원10")
+
+        val groupDto: GroupDto = GroupDto(110, "그룹110", "빨간색", "메모",arrayList)
+
+        listener.onSuccess(groupDto)
+    }
+
+    fun callGroup(
+        context: Context,
+        companyId: String,
         groupId: String,
         listener: DetailEmployeeContract.Listener
     ) {//오버로딩
@@ -159,4 +195,6 @@ class GroupModel {
 
         listener.onGroupSuccess(groupDto)
     }
+
+
 }

@@ -25,7 +25,7 @@ class SelectGroupViewHolder(
         position: Int,
         items: ArrayList<GroupDto>
     ) {
-        idx = items[position].idx
+        idx = items[position].id
         name = items[position].name
 
         SGI_name.text = item.name
@@ -35,7 +35,7 @@ class SelectGroupViewHolder(
         }
 
         SGI_check.setOnCheckedChangeListener(this)
-        SGI_check.isChecked = checkArray.contains(SelectGroupData(item.idx,item.name.toString()))
+        SGI_check.isChecked = checkArray.contains(item.id?.let { SelectGroupData(it,item.name.toString()) })
     }
 
     override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {

@@ -13,7 +13,7 @@ class AddEmployeePresenter(
 ) : AddEmployeeContract.IAddEmployeePresenter, AddEmployeeContract.Listener {
 
     private var employeeModel: EmployeeModel =
-        EmployeeModel()
+        EmployeeModel(context)
 
     override fun nameChange(text: String) {
         if(text.isEmpty())
@@ -44,13 +44,23 @@ class AddEmployeePresenter(
     override fun create(
         name: String,
         position: String,
-        group: java.util.ArrayList<SelectGroupData>?,
+        group: ArrayList<SelectGroupData>?,
         email: String?,
         phoneNum: String?,
         invite: Boolean,
         memo: String?
     ) {
+        val hashMap = HashMap<String,Any>()
+        hashMap["name"] = name
+        hashMap["position"] = position
+        group?.let { hashMap.put("group", it) }
+        email?.let { hashMap.put("email", it) }
+        phoneNum?.let { hashMap.put("phone", it) }
+        hashMap["invite"] = invite
+        memo?.let { hashMap.put("memo", it) }
 
+        employeeModel.createEmployee(hashMap,this)
+        view.progressVisible()
     }
 
     override fun groupClick() {
@@ -58,10 +68,13 @@ class AddEmployeePresenter(
     }
 
     override fun onSuccess() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        view.progressInvisible()
+        view.toastMessage("직원이 생성되었습니다.")
+        view.finishActivity()
     }
 
     override fun onFailure() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        view.progressInvisible()
+        view.toastMessage("생성 실패 오류")
     }
 }

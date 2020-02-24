@@ -1,15 +1,42 @@
 package com.example.workman.Model.DAO
 
 import android.content.Context
+import com.example.workman.Api.ServiceGenerator
+import com.example.workman.Model.DTO.DefaultResponse
 import com.example.workman.Model.DTO.EmployeeDto
+import com.example.workman.View.Add_Employee.AddEmployeeContract
 import com.example.workman.View.Detail_Employee.DetailEmployeeContract
+import com.example.workman.View.Detail_Group.DetailGroupContract
 import com.example.workman.View.Employee.EmployeeContract
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
-class EmployeeModel {
+class EmployeeModel(context: Context) {
+
+    val serviceGenerator: ServiceGenerator = ServiceGenerator(context)
 
     fun callEmployee(idx: Int, listener: DetailEmployeeContract.Listener) {
+        val params = HashMap<String, Any>()
+
+        params["Company"] = "company"
+        params["idx"] = idx
+
+//        //api통신 여기서
+        serviceGenerator.instance.callEmployee(params).enqueue(object : Callback<EmployeeDto> {
+            override fun onFailure(call: Call<EmployeeDto>, t: Throwable) {
+                listener.onFailure()
+            }
+
+            override fun onResponse(call: Call<EmployeeDto>, response: Response<EmployeeDto>) {
+                response.body()?.let { listener.onSuccess(it) }
+            }
+        })
+    }
+
+    fun callEmployee(idx: String, listener: DetailGroupContract.Listener) {
         val params = HashMap<String, Any>()
 
         params["Company"] = "company"
@@ -20,7 +47,7 @@ class EmployeeModel {
         val arrayList = ArrayList<String>()
         arrayList.add("groupUid1")
 
-        listener.onSuccess(
+        listener.onEmployeeSuccess(
             EmployeeDto(
                 1,
                 "김연준",
@@ -36,12 +63,28 @@ class EmployeeModel {
     }
 
     fun createEmployee(
-        context: Context,
-        companyId: String,
-        listener: EmployeeContract.Listener,
-        isActive: Boolean
+        hashMap: HashMap<String, Any>,
+        listener: AddEmployeeContract.Listener
     ) {
+        serviceGenerator.instance.addEmployee(hashMap).enqueue(object : Callback<DefaultResponse> {
+            override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                println("오류 : $t")
+                listener.onFailure()
+            }
 
+            override fun onResponse(
+                call: Call<DefaultResponse>,
+                response: Response<DefaultResponse>
+            ) {
+                if(response.body()?.type!!)
+                {
+                    listener.onSuccess()
+                }else {
+                    listener.onFailure()
+                    println("실패 : " + response.body()?.data)
+                }
+            }
+        })
     }
 
     fun callEmployees(
@@ -89,5 +132,9 @@ class EmployeeModel {
 
             listener.onPassiveSuccess(context, items)
         }
+    }
+
+    fun modifyEmployee() {
+
     }
 }

@@ -52,6 +52,8 @@ class ModifyEmployeeActivity : AppCompatActivity(), ModifyEmployeeContract.IModi
             }
         })
 
+        ME_active.setOnClickListener(this)
+        ME_inactive.setOnClickListener(this)
         ME_save.setOnClickListener(this)
         ME_group.setOnClickListener(this)
     }
@@ -61,6 +63,14 @@ class ModifyEmployeeActivity : AppCompatActivity(), ModifyEmployeeContract.IModi
             ME_inactive.visibility = View.VISIBLE
         } else {
             ME_inactive.visibility = View.INVISIBLE
+        }
+    }
+
+    override fun setActiveButtonVisible(boolean: Boolean) {
+        if (boolean) {
+            ME_active.visibility = View.VISIBLE
+        } else {
+            ME_active.visibility = View.INVISIBLE
         }
     }
 
@@ -128,9 +138,16 @@ class ModifyEmployeeActivity : AppCompatActivity(), ModifyEmployeeContract.IModi
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.ME_save -> {
+                presenter?.modifySave()
             }
             R.id.ME_group -> {
                 presenter?.groupClick()
+            }
+            R.id.ME_active -> {
+                presenter?.activeChange(true)
+            }
+            R.id.ME_inactive -> {
+                presenter?.activeChange(false)
             }
         }
     }
